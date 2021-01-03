@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Drag&amp;DropAnimation</string>
+    <string name="blue_balls_text">Blue Balls</string>
+    <string name="red_balls_text">Red Balls</string>
+</resources>

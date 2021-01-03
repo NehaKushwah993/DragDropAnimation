@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.neha.dragdropanimation.DragContainer xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_top_circle_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!--
+        This DragContainer can have only one child
+    -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:src="@drawable/navigation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewRed"
+            android:layout_height="0dp"
+            android:contentDescription="navigation" />
+
+        <ImageView
+            android:id="@+id/imageViewRed"
+            android:layout_width="@dimen/ball_width"
+            android:layout_height="@dimen/ball_height"
+            android:background="@null"
+            app:layout_constraintBottom_toTopOf="@+id/tvPercentageBalls"
+            app:layout_constraintEnd_toStartOf="@id/imageViewBlue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/red"
+            android:contentDescription="imageViewRed" />
+
+        <TextView
+            android:id="@+id/tvNumberOfRedBalls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_too_large"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintBottom_toTopOf="@+id/tvPercentageBalls"
+            app:layout_constraintEnd_toStartOf="@id/imageViewBlue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewRed"
+            tools:text="red balls" />
+
+        <ImageView
+            android:id="@+id/imageViewBlue"
+            android:layout_width="@dimen/ball_width"
+            android:layout_height="@dimen/ball_height"
+            android:background="@null"
+            app:layout_constraintBottom_toTopOf="@+id/tvPercentageBalls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageViewRed"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/blue"
+            android:contentDescription="imageViewBlue" />
+
+
+        <TextView
+            android:id="@+id/tvNumberOfBlueBalls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_too_large"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintBottom_toTopOf="@+id/tvPercentageBalls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageViewRed"
+            app:layout_constraintTop_toBottomOf="@id/imageViewRed"
+            tools:text="blue balls" />
+
+        <TextView
+            android:id="@+id/tvPercentageBalls"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintBottom_toTopOf="@+id/red_ball_percentage"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:text="% of containers" />
+
+
+        <TextView
+            android:id="@+id/red_ball_percentage"
+            android:layout_width="193dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:gravity="center"
+            android:text="@string/red_balls_text"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintBottom_toTopOf="@+id/seekBarCurrentPercentage"
+            app:layout_constraintEnd_toStartOf="@+id/blue_ball_percentage"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/blue_ball_percentage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:gravity="center"
+            android:text="@string/blue_balls_text"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size_normal"
+            app:layout_constraintBottom_toTopOf="@+id/seekBarCurrentPercentage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/red_ball_percentage" />
+
+
+        <SeekBar
+            android:id="@+id/seekBarCurrentPercentage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingTop="10dp"
+            android:clickable="false"
+            android:paddingBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.neha.dragdropanimation.DragContainer>
